@@ -168,6 +168,50 @@ console.log(freqCounter(a));`
 }
 let a = "aabbcddee";
 console.log(freqCounter(a));`
+  },
+  {
+    id:"10",
+    question: "Second Largest number in array",
+    answerCode:`const secondLargest = (arr)=>{
+    let first =  -Infinity;
+    let second = -Infinity;
+    for(let i=0; i<arr.length; i++){
+        if(arr[i] > first){
+            second = first;
+            first = arr[i]
+        }
+        if(arr[i] > second && arr[i] < first){
+            second = arr[i]
+        }
+    }
+    return second
+}
+let a = [10, 5, 8, 20, 12, 19];
+console.log(secondLargest(a));`
+  },
+  {
+    id:"11",
+    question: "Third Largest number",
+    answerCode:`const thirdLargest = (arr)=>{
+    let first =  -Infinity;
+    let second = -Infinity;
+    let third = -Infinity;
+    for(let i=0; i<arr.length; i++){
+        if(arr[i] > first){
+            third = second;
+            second = first;
+            first = arr[i]
+        } else if(arr[i] > second && arr[i] < first){
+            third = second;
+            second = arr[i]
+        } else if(arr[i] > third && arr[i] < second){
+            third = arr[i]
+        }
+    }
+    return third
+}
+let a = [10, 5, 8, 20, 12, 19];
+console.log(thirdLargest(a));`
   }
 ];
 
