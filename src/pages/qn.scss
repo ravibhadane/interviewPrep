@@ -1,0 +1,25 @@
+/* Regular answer text */
+.answer-text {
+    color: #602a19;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    background-color: #f2ecf1;
+    padding: 8px;
+}
+
+/* Code snippets */
+.answer-code {
+  background-color: #1e1e1e; /* dark background */
+  color: #00ffcc;; /* blue code color */
+  padding: 10px;
+  border-radius: 6px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+  margin-top: 4px;
+}
+
+/* Optional: make code inline blocks wrap */
+.answer-code code {
+  white-space: pre-wrap;
+}

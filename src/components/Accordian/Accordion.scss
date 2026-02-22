@@ -1,0 +1,26 @@
+.accordion {
+  margin-bottom: 1rem;
+
+  .question {
+    background: #3498db;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .answer {
+    background: #2f2f2f;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 5px;
+
+    pre {
+      background: #1e1e1e;
+      padding: 1rem;
+      overflow-x: auto;
+      color: #00ffcc;
+    }
+  }
+}
