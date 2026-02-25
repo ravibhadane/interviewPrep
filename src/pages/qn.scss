@@ -8,6 +8,26 @@
     font-family: Roboto;
 }
 
+.answer-text code {
+  background-color: #1e1e1e;
+  color: #ffcc00;
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-family: monospace;
+}
+
+.answer-text pre {
+  background-color: #1e1e1e;
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.answer-text pre code {
+  background: none; /* prevent double background */
+  color: #d3eadf;
+}
+
 /* Code snippets */
 .answer-code {
   background-color: #1e1e1e; /* dark background */
