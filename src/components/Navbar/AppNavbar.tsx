@@ -44,6 +44,12 @@ const AppNavbar = () => {
           </NavItem>
 
           <NavItem>
+            <NavLink to="/htmlcss" className="nav-link">
+              HTML / CSS
+            </NavLink>
+          </NavItem>
+
+          <NavItem>
             <NavLink to="/common" className="nav-link">
               Common
             </NavLink>

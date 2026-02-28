@@ -212,8 +212,98 @@ console.log(secondLargest(a));`
 }
 let a = [10, 5, 8, 20, 12, 19];
 console.log(thirdLargest(a));`
+  },
+  {
+    id:"12",
+    question:`Implement Curry (generic curry() function)`,
+    answerCode:`
+function curry(fn){
+  return function curried(...args){
+    if(arguments.length >= fn.length){
+      return fn(...args)
+    } else {
+      return (...nextArgs) => curried(...args, ...nextArgs);
+    }
   }
-];
+}
+
+const sum = (a, b, c) => a + b + c;
+const currySum = curry(sum);
+console.log(currySum(1,2,3));  //6
+console.log(currySum(1)(2,3)); //6
+console.log(currySum(1)(2)(3)); //6
+console.log(currySum(1,2)(3));
+` 
+},
+{
+    id:"13",
+    question:"Find the Maximum and Minimum number from array",
+    answerCode:`
+let arr = [5, 8, 2, 15, 3];
+console.log(Math.max(...arr));  //15
+console.log(Math.min(...arr));  //2
+------------------------------------------------------
+- Max Number
+let result = arr.reduce((largest, num)=>{
+    return largest > num? largest : num
+},arr[0])
+console.log(result);
+
+- Min Number   // just changed greater than (>) to (<)
+let result = arr.reduce((largest, num)=>{
+    return largest < num? largest : num
+},arr[0])
+console.log(result);
+    `
+  },
+  {
+    id:"14",
+    question:"Implement Debounce",
+    answerCode:`
+function debounce(fn, delay) {
+    let timer = 0;
+    return function (...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            fn.apply(this, args)
+        }, delay)
+    }
+}
+const debounceLog = debounce(console.log, 300);
+  debounceLog("Hello")  // wait 300 ms
+  debounceLog("Hi")     //reset timer
+  debounceLog("Hey")    //reset timer again
+    `
+  },
+  {
+    id:"15",
+    question:"Implement Throttle",
+    answerCode:`
+function throttle(func, delay) {
+  let lastCall = 0;
+  let lastResult;
+  return function (...args) {
+    const now = Date.now();
+    if (now - lastCall >= delay) {
+      lastCall = now;
+      lastResult = func.apply(this, args);
+      return lastResult
+    }
+    return lastResult
+  }
+  
+}
+const throttledFn = throttle(() => console.log('Function called!'), 1000);
+throttleFn(); //Execute Immediatly
+throttleFn(); //Ignored
+throttleFn(); //Ignored
+//... after 1000 ms
+throttleFn(); //Executes
+throttleFn(); //Ignored
+    `
+  }
+
+]
 
 
 

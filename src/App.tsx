@@ -11,6 +11,7 @@ import Angular from './pages/Angular'
 import Common from './pages/Common'
 import AppNavbar from './components/Navbar/AppNavbar'
 import React from './pages/React'
+import Htmlcss from "./pages/Htmlcss";
 function App() {
 
   return (
@@ -22,6 +23,7 @@ function App() {
       <Route path="/coding" element={ <Coding />} />
       <Route path="/angular" element={ <Angular />} />
       <Route path='/react' element={ <React />} />
+      <Route path="/htmlcss" element={ <Htmlcss />} />
       <Route path="/common" element={ <Common />} />      
     </Routes>
    </BrowserRouter>
