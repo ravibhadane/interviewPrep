@@ -301,6 +301,88 @@ throttleFn(); //Ignored
 throttleFn(); //Executes
 throttleFn(); //Ignored
     `
+  },
+
+  {
+    id:"16",
+    question:"Longest substring without repeating characters in javascript",
+    answerText:`
+Example 1:
+Input: "abcabcbb"
+Output: 3  // "abc"
+
+Example 2:
+Input: "bbbbb"
+Output: 1  // "b"
+
+Example 3:
+Input: "pwwkew"
+Output: 3  // "wke"
+
+Example 4:
+Input: ""
+Output: 0
+
+Example 5:
+Input: "aab"
+Output: 2  // "ab"`,
+    answerCode:`
+  function lengthOfLongestSubstring(s){
+    let maxLen = 0;
+    let set = new Set();
+    let start = 0;
+    
+    for(let end = 0; end < s.length; end++){
+        while(set.has(s[end])){
+            set.delete(s[start]);
+            start++;
+        }
+        set.add(s[end]);
+        maxLen = Math.max(maxLen, end - start + 1 );
+    }
+    return maxLen;
+}
+
+console.log(lengthOfLongestSubstring("abcabcbb")); //3
+console.log(lengthOfLongestSubstring("bbbbb")); //1
+console.log(lengthOfLongestSubstring("pwwkew")); //2
+    `
+  },
+
+  {
+    id:"17",
+    question:"Deep clone an object",
+    answerText:`
+
+**Approach**
+1. Check if the input is an object; if not, return it directly. 
+2. Initialize a new object or array based on the input type. 
+3. Recursively copy properties and elements. 
+4. Ensure that nested objects and arrays are deeply cloned without maintaining references to the original object.
+    `,
+    answerCode:`
+  function deepClone(obj) {
+    if (obj === null || typeof obj !== 'object') {
+        return obj;
+    }
+    
+    let clone = Array.isArray(obj) ? [] : {};
+    
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            clone[key] = deepClone(obj[key]);
+        }
+    }
+    
+    return clone;
+}
+const original = { a: 1, b: { c: 2 }, d: [3, 4] };
+const cloned = deepClone(original);
+console.log(cloned); // { a: 1, b: { c: 2 }, d: [3, 4] }
+console.log(cloned !== original); // true
+console.log(cloned.b !== original.b); // true
+console.log(cloned.d !== original.d); // true
+     `
   }
 
 ]
