@@ -20,7 +20,7 @@ const AppNavbar = () => {
         <Nav navbar className="w-100 justify-content-center justify-content-md-center gap-4">
 
           <NavItem>
-            <NavLink to="/" className="nav-link">
+            <NavLink to="/home" className="nav-link">
               Menu
             </NavLink>
           </NavItem>
