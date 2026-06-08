@@ -1,0 +1,15 @@
+.highlight {
+  color: red;
+  display: inline;
+  padding: 0 3px;
+  white-space: normal;
+}
+
+@media (max-width: 768px) {
+  .accordion-button {
+    display: block !important;
+    white-space: normal;
+    word-break: break-word;
+    text-align: left;
+  }
+}
